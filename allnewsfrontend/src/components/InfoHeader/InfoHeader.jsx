@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box ,Typography} from '@material-ui/core';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '@material-ui/core';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme =>({
     textparent : {
 
         background : '#f44336',
@@ -11,7 +11,10 @@ const useStyles = makeStyles({
         height : '48',
         display : 'flex',
         alignItems : 'center',
-        padding : '10px'
+        padding : '10px',
+        [theme.breakpoints.down('md')] : {
+            display : 'none',
+        }
     },
     text : {
         fontSize : '14px',
@@ -21,7 +24,7 @@ const useStyles = makeStyles({
     logo : {
         height : '34px'
     }
-})
+}))
 
 const appleStore = 'https://assets.inshorts.com/website_assets/images/appstore.png';
 const googleStore = 'https://assets.inshorts.com/website_assets/images/playstore.png';
